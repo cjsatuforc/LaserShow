@@ -25,8 +25,8 @@ float y_level;
 float move_scale = 2.4;
 
 int laser_pin = 12;
-int x_speaker_pin = 5;
-int y_speaker_pin = 6;
+int x_speaker_pin = 6;
+int y_speaker_pin = 5;
 
 
 float exp_move = 2.7;  //main value to adjust to change laser speed
@@ -47,8 +47,8 @@ float max_move = 30;     //maximum allowed movement - helps keep things from mov
 float laser_toggle_delay = 11;   //extra delay in units of 20 us before toggling laser on / off - try 0 to 100
 float line_delay = 8;   //extra delay in units of 20 us at end of each line - try 0 to 100                      
 
-float x_min_value = 5; //these set the minimum value for X and Y channels (on a scale of 0 to 255)
-float y_min_value = 5; //this helps compensate for non-linear response some speakers have right off "center"
+float x_min_value = 0; //these set the minimum value for X and Y channels (on a scale of 0 to 255)
+float y_min_value = 0; //this helps compensate for non-linear response some speakers have right off "center"
                         //these values must be below the corresponding max values
                         //increasing these values decrease image size
                         //try values of 0-30 - increase if you are having quality issues
@@ -890,5 +890,6 @@ void setPwmFrequency(int pin, int divisor) {
     TCCR2B = TCCR2B & 0b11111000 | mode;
   }
 }
+
 
 
